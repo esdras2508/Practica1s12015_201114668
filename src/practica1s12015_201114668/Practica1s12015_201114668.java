@@ -4,6 +4,8 @@
  */
 package practica1s12015_201114668;
 
+import clases.listaUsr;
+
 /**
  *
  * @author esdras
@@ -17,6 +19,7 @@ public class Practica1s12015_201114668 {
         // TODO code application logic here
         
         Inicio ini = new Inicio();
+        listaUsr nueva = new listaUsr();
         ini.setVisible(true);
     }
 }

@@ -9,14 +9,15 @@ package clases;
  * @author esdras
  */
 public class NodoUsr {
-    String usuario;
+    String usuario, tipo;
     int personajes;
     NodoUsr siguiente;
     NodoPersonajes der;
     
-    public NodoUsr(String usr, int pers){
+    public NodoUsr(String usr, int pers, String tipo){
         this.usuario = usr;
         this.personajes = pers;
+        this.tipo = tipo;
         this.siguiente = null;
         this.der = null;
     }
