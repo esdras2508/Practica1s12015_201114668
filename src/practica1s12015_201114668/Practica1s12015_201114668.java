@@ -11,6 +11,8 @@ import clases.listaUsr;
  * @author esdras
  */
 public class Practica1s12015_201114668 {
+    
+    static listaUsr nueva;
 
     /**
      * @param args the command line arguments
@@ -19,7 +21,7 @@ public class Practica1s12015_201114668 {
         // TODO code application logic here
         
         Inicio ini = new Inicio();
-        listaUsr nueva = new listaUsr();
+        nueva = new listaUsr();
         ini.setVisible(true);
     }
 }

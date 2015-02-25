@@ -14,9 +14,12 @@ import clases.listaUsr;
  */
 public class Inicio extends javax.swing.JFrame {
     
-    listaUsr nueva;
+    public static listaUsr nueva = new listaUsr();
     
 
+    public listaUsr ver(){
+        return nueva;
+    }
     /**
      * Creates new form Inicio
      */
@@ -108,19 +111,21 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(this.nueva == null){
+        /*if(ver() == null){
             this.nueva = new listaUsr();
             usuarios usr = new usuarios();
             this.setVisible(false);
             usr.setVisible(true);        
-        }else{
+        }else{*/
             usuarios usr = new usuarios();
             this.setVisible(false);
             usr.setVisible(true);
             
-        }
+      //  }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

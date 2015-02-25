@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class usuarios extends javax.swing.JFrame {
 
     listaUsr lista;
+    Inicio list = new Inicio();
     /**
      * Creates new form usuarios
      */
@@ -126,10 +127,11 @@ public class usuarios extends javax.swing.JFrame {
             }else{
                 tipo = "zombis";
             }
-            if(lista == null){
-                lista = new listaUsr();
-                lista.add(nombre,total, tipo);
-                if(tipo == "plantas"){
+            //lista = list.ver();
+            if(list.ver() == null){
+                //lista = new listaUsr();
+                list.ver().add(nombre, total, tipo);
+                if(tipo.equals("plantas")){
                     plantas abrir = new plantas();
                     abrir.setVisible(true);
                     this.setVisible(false);
@@ -139,7 +141,16 @@ public class usuarios extends javax.swing.JFrame {
                     this.setVisible(false);
                 }
             }else{
-                lista.add(nombre,total, tipo);
+                list.ver().add(nombre, total, tipo);
+                if(tipo.equals("plantas")){
+                    plantas abrir = new plantas();
+                    abrir.setVisible(true);
+                    this.setVisible(false);
+                }else{
+                    zombis abrir = new zombis();
+                    abrir.setVisible(true);
+                    this.setVisible(false);
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -147,41 +158,10 @@ public class usuarios extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new usuarios().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cpersonajes;
-    private javax.swing.JRadioButton Splantas;
-    private javax.swing.JRadioButton Szombis;
+    public javax.swing.JRadioButton Splantas;
+    public javax.swing.JRadioButton Szombis;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
